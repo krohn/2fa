@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  twofaqr:
+    container_name: twofaqr
+    image: nginx:alpine
+    labels:
+      - "traefik.enable=false"  
+    volumes:
+      - ./www:/usr/share/nginx/html
+    ports:
+      - "8083:80"
+    security_opt:
+      - seccomp:unconfined
+
